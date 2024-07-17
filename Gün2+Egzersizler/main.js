@@ -21,7 +21,8 @@ console.log(charAtIndex15); // Çıktı: G */
 let repeatedTekrar = tekrar.repeat(2);
 console.log(repeatedTekrar); // Çıktı: 30 Gün JavaScript30 Gün JavaScript*/
 
-let sentence = 'Aşk bu dünyadaki en iyi şeydir. Bazıları aşkını buldu ve bazıları hala aşkını arıyor.';
+//                            !!!!!! 
+/*let sentence = 'Aşk bu dünyadaki en iyi şeydir. Bazıları aşkını buldu ve bazıları hala aşkını arıyor.';
 let wordToCount = 'aşk';
 
 // Cümleyi küçük harfe çevirerek ve boşluk ile bölerek kelimelere ayırıyoruz
@@ -36,4 +37,25 @@ for (let word of words) {
     }
 }
 
-console.log(`Cümledeki '${wordToCount}' kelimesi sayısı:`, count);
+console.log(`Cümledeki '${wordToCount}' kelimesi sayısı:`, count); */
+
+let text = 'Aylık maaşından 5000 euro, yıllık 10000 euro ikramiye, ayda 15000 euro online kurstan kazanıyor.';
+
+// Metindeki sayıları ayıklamak için regular expression (düzenli ifade) kullanıyoruz
+let numbers = text.match(/\d+/g);
+
+// Sayıları integer'a çeviriyoruz
+let monthlySalary = parseInt(numbers[0]);
+let annualBonus = parseInt(numbers[1]);
+let monthlyCourseIncome = parseInt(numbers[2]);
+
+// Aylık maaşı yıllık olarak hesaplıyoruz
+let annualSalary = monthlySalary * 12;
+
+// Aylık kurs gelirini yıllık olarak hesaplıyoruz
+let annualCourseIncome = monthlyCourseIncome * 12;
+
+// Toplam yıllık gelir
+let totalAnnualIncome = annualSalary + annualBonus + annualCourseIncome;
+
+console.log('Yıllık toplam gelir:', totalAnnualIncome, 'euro');
